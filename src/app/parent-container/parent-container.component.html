@@ -1,0 +1,19 @@
+<div class='component'>
+    <h2>{{incomingValue}}</h2>
+
+    First name: <input type="text" name="FirstName" value="" [placeholder]="incomingValue"><br>
+    <app-child-container
+    (valueChanged)="updateHeader($event)"
+    [fromParent] = "parentVariable"
+    ></app-child-container>
+
+    <button (click)="sendToChild()">Send to child</button>
+
+    <p> {{beverageInput.value}} </p>
+        
+        <select #beverageInput (input)="0">
+          <option value="milo">Milo</option>
+          <option value="coke">Coke</option>
+          <option value="fanta">Fanta</option>
+        </select>
+</div>
